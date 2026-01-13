@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haosong Xu · Curriculum Vitae</title>
+  <style>
+    :root {
+      --navy: #0c172b;
+      --card: #ffffff;
+      --border: #d8e2ed;
+      --text: #1c2a3a;
+      --muted: #4b6076;
+      --accent: #1a3355;
+      --tag: #eaf1fb;
+      --tag-border: #c8d8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--navy);
+      line-height: 1.55;
+      padding: 32px 14px 64px;
+    }
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      background: var(--navy);
+    }
+    .hero-wrap {
+      background: var(--navy);
+      padding: 0 0 26px;
+    }
+    .hero-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 18px 0;
+      color: #f5f8ff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 26px;
+      letter-spacing: 0.3px;
+    }
+    .hero-top .logo {
+      width: 68px;
+      height: 68px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.28);
+      overflow: hidden;
+      background: #0f1728;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+    .hero-top .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 6px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 26px 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    }
+    .hero-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 160px;
+      gap: 18px;
+      align-items: start;
+    }
+    .hero-label {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 30px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--accent);
+      letter-spacing: 0.4px;
+    }
+    .subtitle {
+      margin: 0 0 12px;
+      font-size: 15px;
+      color: #2f4160;
+      font-weight: 600;
+    }
+    .summary {
+      margin: 0 0 16px;
+      color: var(--text);
+      font-size: 14px;
+    }
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 8px 14px;
+      margin: 0 0 12px;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .contact li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .icon {
+      width: 16px;
+      height: 16px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: var(--accent);
+      background: #f6f9ff;
+      flex-shrink: 0;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      padding: 6px 10px;
+      background: var(--tag);
+      border: 1px solid var(--tag-border);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--accent);
+    }
+    .formula {
+      width: 150px;
+      height: 150px;
+      background: #161616;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      display: grid;
+      place-items: center;
+      padding: 8px;
+    }
+    .formula img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .section-card {
+      margin-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .section-heading .icon {
+      width: 18px;
+      height: 18px;
+      font-size: 11px;
+    }
+    h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: var(--accent);
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 0.2px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    ul {
+      margin: 0 0 12px 18px;
+      padding: 0;
+      color: var(--text);
+      font-size: 14px;
+    }
+    li { margin-bottom: 6px; }
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    @media (max-width: 800px) {
+      .hero-card { grid-template-columns: 1fr; }
+      .formula { justify-self: start; }
+      .grid-two { grid-template-columns: 1fr; }
+      body { padding: 18px 12px 48px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="hero-wrap">
+      <div class="hero-top">
+        <div class="logo">
+          <img src="logo.png" alt="Haosong Xu logo">
+        </div>
+        <div>Haosong Xu</div>
+      </div>
+      <div class="card hero-card">
+        <div>
+          <div class="hero-label">Curriculum Vitae</div>
+          <h1>Haosong Xu</h1>
+          <div class="subtitle">B.Sc. Physics (Minor in Mathematics) — Data Analysis, Scientific Computing, and Teaching</div>
+          <p class="summary">
+            Trained in theoretical and experimental physics with a strong mathematical foundation.
+            Focus on astrophysics, quantitative data analysis, and undergraduate-level teaching in
+            mathematics, physics, and related disciplines.
+          </p>
+          <ul class="contact">
+            <li><span class="icon">✉</span> Samxuhaosong@gmail.com</li>
+            <li><span class="icon">✆</span> +1 (236) 777-1881</li>
+            <li><span class="icon">📍</span> British Columbia, Canada</li>
+            <li><span class="icon">🎓</span> Simon Fraser University</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Astrophysics research</span>
+            <span class="tag">Data analysis</span>
+            <span class="tag">Teaching</span>
+          </div>
+        </div>
+        <div class="formula">
+          <img src="formula.png" alt="Geodesic equation">
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card card">
+      <div class="section-heading">
+        <span class="icon">☰</span>
+        <span>Education</span>
+      </div>
+      <h3>Bachelor of Science — Major in Physics, Minor in Mathematics</h3>
+      <div class="meta">Simon Fraser University · 2017–2023</div>
+      <p class="summary">
+        Undergraduate background in quantum mechanics, special and general relativity, classical and statistical
+        mechanics, electromagnetism, and computational physics. Advanced mathematics including analysis, partial
+        differential equations, complex variables, and abstract algebra.
+      </p>
+    </div>
+
+    <div class="section-card card">
+      <div class="section-heading">
+        <span class="icon">★</span>
+        <span>Research & Projects</span>
+      </div>
+      <h3>Astrophysics Research — Galaxy Rotation Curve</h3>
+      <div class="meta">2024–2025</div>
+      <ul>
+        <li>Analyzed rotation curves for a selected galaxy using MaNGA survey data (SDSS-IV); focused on data adaptation, model construction, and physical interpretation.</li>
+        <li>Presented individual research results at a small conference; publication in progress.</li>
+      </ul>
+      <h3>Optics Experiment — Optical Spatial Filtering (High/Low-Pass)</h3>
+      <div class="meta">March–April 2021</div>
+      <ul>
+        <li>Built 3 classical optics experiments (LED source, thin slits, lenses) to realize high- and low-pass spatial frequency filters for illuminated images.</li>
+        <li>Simulated the setup in Python and performed quantitative analysis with ImageJ on recorded images.</li>
+      </ul>
+    </div>
+
+    <div class="section-card card">
+      <div class="section-heading">
+        <span class="icon">⚙</span>
+        <span>Skills</span>
+      </div>
+      <h3>Computation</h3>
+      <ul>
+        <li>MATLAB; Python</li>
+        <li>LaTeX</li>
+        <li>Microsoft Office (Word, Excel, PowerPoint)</li>
+        <li>LabVIEW</li>
+        <li>ImageJ (graphical data analysis)</li>
+        <li>Studio One (DAW for music production)</li>
+        <li>Web design</li>
+        <li>Computational simulation of physical or economic systems</li>
+      </ul>
+      <h3>Laboratory</h3>
+      <ul>
+        <li>Radioactive decay detection and analysis</li>
+        <li>Circuit prototyping on breadboard and PID-controlled circuits</li>
+        <li>Oscilloscopes and electric amplifiers</li>
+        <li>Optical microscopes (including oil immersion)</li>
+        <li>Laser alignment and optical tweezers</li>
+        <li>Diffraction experiments with LED sources and slits (single and double slit, 1D and 2D)</li>
+        <li>Optical spatial filtering with Fourier transform analysis (high- and low-pass filters)</li>
+        <li>Basic chemistry techniques (titration, centrifuge)</li>
+      </ul>
+      <h3>Languages</h3>
+      <ul>
+        <li>Mandarin (native)</li>
+        <li>English (fluent)</li>
+        <li>Japanese (beginner, in progress)</li>
+      </ul>
+      <h3>Data & Analysis</h3>
+      <ul>
+        <li>Python-based data analysis and visualization</li>
+        <li>Curve fitting and model comparison</li>
+        <li>Least-squares estimation</li>
+        <li>Experience with experimental data pipelines</li>
+      </ul>
+    </div>
+
+    <div class="section-card card">
+      <div class="section-heading">
+        <span class="icon">▢</span>
+        <span>Teaching & Work Experience</span>
+      </div>
+      <h3>Tutor & Mathematics Teacher</h3>
+      <div class="meta">2019–2024 · Canada</div>
+      <ul>
+        <li>Private tutoring in Physics 11 and Pre-Calculus 12; supported a student who entered the Engineering program at McGill University.</li>
+        <li>Taught Calculus I online to a University of Nottingham student and Linear Algebra to a University of Alberta student.</li>
+        <li>Tutored grade 8 mathematics (functions, 2D geometry, algebra) and upper-level courses (Math 320 Real Analysis, PHYS 321 topics) at DaCheng Education.</li>
+        <li>ESL English: effective learning method with observable improvement in 3 months.</li>
+        <li>Courses taught include high school Science (grades 7–10), Mathematics and Physics (grades 11–12 and AP), and introductory university topics.</li>
+      </ul>
+
+      <h3>Technician & Data Analyst</h3>
+      <div class="meta">2025 · China & Japan</div>
+      <ul>
+        <li>Worked at WanyuanChun Company as a data analyst and manager’s secretary; coordinated communication between domestic departments and an international partner.</li>
+      </ul>
+
+      <h3>Electric Guitar Teacher</h3>
+      <ul>
+        <li>Taught electric guitar, balancing music theory with practical application.</li>
+      </ul>
+
+      <h3>Sales — Tier 1 Health Supplement Product NA</h3>
+      <ul>
+        <li>Provided product resources, free shipping, and customer guidance for general maintenance and protection.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
+
